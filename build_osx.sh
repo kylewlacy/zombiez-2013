@@ -13,6 +13,7 @@ files="$files platforms/osx/src/main.m"
 appdir="build/Zombiez 2013.app"
 rm -r "$appdir"
 mkdir -p "$appdir"/Contents/{_CodeSignature,Frameworks,MacOS,Plugins,Resources,Versions}
+mkdir -p "$appdir"/Contents/Resources/en.lproj
 
 for file in $files; do
   if [ -e "$file" ]; then
@@ -30,3 +31,10 @@ cp platforms/resources/* "$appdir"/Contents/Resources/
 cp platforms/osx/resources/* "$appdir"/Contents/Resources/
 cp platforms/osx/Info.plist "$appdir"/Contents/Info.plist
 rm build/*.o
+
+for xib in platforms/osx/nibs/*.xib; do
+  nib=$(basename "$xib")
+  nib=${nib%.*}.nib
+  nib="$appdir/Contents/Resources/en.lproj/$nib"
+  ibtool --errors --warnings --notices --output-format human-readable-text --compile "$nib" "$xib"
+done
