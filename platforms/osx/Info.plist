@@ -22,7 +22,7 @@
     <string>1.0</string>
     <key>NSMainNibFile</key>
     <string>MainMenu</string>
-    <key>NSPrincipleClass</key>
+    <key>NSPrincipalClass</key>
     <string>NSApplication</string>
   </dict>
 </plist>
