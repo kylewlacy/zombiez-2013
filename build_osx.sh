@@ -10,8 +10,9 @@ for file in src/*.cpp; do
 done
 files="$files platforms/osx/src/main.m"
 
-appdir="build/Zombiez.app"
-mkdir -p $appdir/Contents/{_CodeSignature,Frameworks,MacOS,Plugins,Resources,Versions}
+appdir="build/Zombiez 2013.app"
+rm -r "$appdir"
+mkdir -p "$appdir"/Contents/{_CodeSignature,Frameworks,MacOS,Plugins,Resources,Versions}
 
 for file in $files; do
   if [ -e "$file" ]; then
@@ -23,8 +24,9 @@ for file in $files; do
     fileobjs="$fileobjs$fileobj "
   fi
 done
-gcc $cflags $ldflags -o $appdir/Contents/MacOS/zombiez2013 $fileobjs
-touch $appdir/Contents/PkgInfo
-cp platforms/osx/Info.plist $appdir/Contents/Info.plist
-cp platforms/osx/resources/* $appdir/Contents/Resources/
+gcc $cflags $ldflags -o "$appdir"/Contents/MacOS/zombiez2013 $fileobjs
+touch "$appdir"/Contents/PkgInfo
+cp platforms/resources/* "$appdir"/Contents/Resources/
+cp platforms/osx/resources/* "$appdir"/Contents/Resources/
+cp platforms/osx/Info.plist "$appdir"/Contents/Info.plist
 rm build/*.o
