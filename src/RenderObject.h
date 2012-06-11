@@ -1,7 +1,8 @@
+#pragma once
+
 #include "platform.h"
 
-class RenderView {
+class RenderObject {
   public:
-    RenderView();
     void render();
 };
