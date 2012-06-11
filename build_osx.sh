@@ -1,6 +1,6 @@
 #!/bin/bash
 cflags="-Wno-import"
-ldflags="-lobjc -framework Foundation -framework Cocoa"
+ldflags="-lobjc -framework Foundation -framework Cocoa -framework OpenGL"
 
 for file in platforms/osx/src/*.mm; do
   files="$files$file "
