@@ -1,6 +1,7 @@
 #include "RenderShape.h"
 
 RenderShape::RenderShape() {
+  points = new RenderPoint*[3];
 }
 
 void RenderShape::render() {
