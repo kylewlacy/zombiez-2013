@@ -1,19 +1,15 @@
 #include "RenderView.h"
 
 RenderView::RenderView() {
+  objects = (RenderObject**)new RenderShape*[1];
+  objects[0] = new RenderShape();
 }
 
 void RenderView::render() {
   glClearColor(0, 0, 0, 0);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  glColor3f(1.0f, 0.85f, 0.35f);
-  glBegin(GL_TRIANGLES);
-  {
-    glVertex3f(0.0, 0.6, 0.0);
-    glVertex3f(-0.2, -0.3, 0.0);
-    glVertex3f(0.2, -0.3, 0.0);
-  }
-  glEnd();
+  objects[0]->render();
+
   glFlush();
 }
