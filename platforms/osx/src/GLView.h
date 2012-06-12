@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import <OpenGL/gl.h>
-#import "../../../src/RenderView.h"
+#import "RenderView.h"
 
 @interface GLView : NSOpenGLView {
   RenderView view;

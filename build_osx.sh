@@ -1,6 +1,6 @@
 #!/bin/bash
 ccompiler="g++"
-cflags="-Wno-import"
+cflags="-Wno-import -iquote src/"
 ldflags="-lobjc -framework Foundation -framework Cocoa -framework OpenGL"
 
 for file in platforms/osx/src/*.mm; do
