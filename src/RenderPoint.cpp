@@ -1,7 +1,6 @@
 #include "RenderPoint.h"
 
-
-RenderPoint::RenderPoint(double x_pos = 0, double y_pos = 0, double z_pos = 0) {
+RenderPoint::RenderPoint(double x_pos, double y_pos, double z_pos) {
   x = x_pos;
   y = y_pos;
   z = z_pos;
