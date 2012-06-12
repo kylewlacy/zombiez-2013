@@ -1,4 +1,5 @@
 #!/bin/bash
+ccompiler="g++"
 cflags="-Wno-import"
 ldflags="-lobjc -framework Foundation -framework Cocoa -framework OpenGL"
 
@@ -20,12 +21,12 @@ for file in $files; do
     fileobj=$(basename "$file")
     fileobj=${fileobj%.*}
     fileobj="build/$fileobj.o"
-    gcc $cflags -c -o "$fileobj" "$file"
+    $ccompiler $cflags -c -o "$fileobj" "$file"
 
     fileobjs="$fileobjs$fileobj "
   fi
 done
-gcc $cflags $ldflags -o "$appdir"/Contents/MacOS/zombiez2013 $fileobjs
+$ccompiler $cflags $ldflags -o "$appdir"/Contents/MacOS/zombiez2013 $fileobjs
 touch "$appdir"/Contents/PkgInfo
 cp platforms/resources/* "$appdir"/Contents/Resources/
 cp platforms/osx/resources/* "$appdir"/Contents/Resources/
