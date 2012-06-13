@@ -1,9 +1,9 @@
 #include "RenderColor.h"
 
-RenderColor::RenderColor(unsigned char red, unsigned char green, unsigned char blue) {
-  r = red;
-  g = green;
-  b = blue;
+RenderColor::RenderColor(unsigned char _r, unsigned char _g, unsigned char _b) {
+  r = _r;
+  g = _g;
+  b = _b;
 }
 
 void RenderColor::render() {

@@ -7,6 +7,6 @@ class RenderPoint : public RenderObject {
   public:
     double x, y, z;
 
-    RenderPoint(double x_pos, double y_pos, double z_pos = 0);
+    RenderPoint(double _x, double _y, double _z = 0);
     void render();
 };

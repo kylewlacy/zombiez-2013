@@ -7,6 +7,6 @@ class RenderColor : public RenderObject {
   public:
     unsigned char r, g, b;
 
-    RenderColor(unsigned char red = 255, unsigned char green = 255, unsigned char blue  = 255);
+    RenderColor(unsigned char _r = 255, unsigned char _g = 255, unsigned char _b  = 255);
     void render();
 };
