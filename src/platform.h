@@ -1,5 +1,7 @@
 // Platform-specific preprocessors can be found from:
 // http://sourceforge.net/apps/mediawiki/predef/index.php?title=Operating_Systems
+#include <cstddef>
+
 #ifdef _WIN32
   #include <gl/gl.h>
 #elif __APPLE__ & __MACH__

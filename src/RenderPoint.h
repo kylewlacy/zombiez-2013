@@ -1,8 +1,9 @@
 #pragma once
 
 #include "platform.h"
+#include "RenderObject.h"
 
-class RenderPoint {
+class RenderPoint : public RenderObject {
   public:
     double x, y, z;
 

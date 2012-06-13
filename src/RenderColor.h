@@ -1,6 +1,9 @@
-#include "platform.h"
+#pragma once
 
-class RenderColor {
+#include "platform.h"
+#include "RenderObject.h"
+
+class RenderColor : public RenderObject {
   public:
     unsigned char r, g, b;
 

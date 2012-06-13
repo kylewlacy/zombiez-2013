@@ -7,7 +7,7 @@
 
 class RenderShape : public RenderObject {
   public:
-    RenderPoint **points;
+    RenderObject **objects;
     RenderColor *color;
 
     RenderShape();
