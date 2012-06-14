@@ -5,11 +5,11 @@
 #include "RenderPoint.h"
 #include "RenderColor.h"
 
-class RenderShape : public RenderObject {
+class RenderModel : public RenderObject {
   public:
     RenderObject **objects;
     RenderColor *color;
 
-    RenderShape();
+    RenderModel();
     void render();
 };

@@ -1,8 +1,8 @@
 #include "RenderView.h"
 
 RenderView::RenderView() {
-  objects = (RenderObject**)new RenderShape*[1];
-  objects[0] = new RenderShape();
+  objects = (RenderObject**)new RenderModel*[1];
+  objects[0] = new RenderModel();
 }
 
 void RenderView::render() {

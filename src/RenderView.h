@@ -2,7 +2,7 @@
 
 #include "platform.h"
 #include "RenderObject.h"
-#include "RenderShape.h"
+#include "RenderModel.h"
 
 class RenderView {
   public:

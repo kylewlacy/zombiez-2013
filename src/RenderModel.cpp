@@ -1,6 +1,6 @@
-#include "RenderShape.h"
+#include "RenderModel.h"
 
-RenderShape::RenderShape() {
+RenderModel::RenderModel() {
   objects = new RenderObject*[4];
   objects[0] = new RenderPoint(0.0, 0.6);
   objects[1] = new RenderPoint(-0.2, -0.3);
@@ -10,7 +10,7 @@ RenderShape::RenderShape() {
   color = new RenderColor(255, 217, 89);
 }
 
-void RenderShape::render() {
+void RenderModel::render() {
   color->render();
   glBegin(GL_TRIANGLES);
   {
