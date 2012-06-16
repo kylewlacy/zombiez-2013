@@ -8,6 +8,7 @@ class RenderView {
   public:
     RenderView();
     void render();
-  protected:
-    RenderObject** objects;
+    
+    bool vboInit;
+    RenderModel** objects;
 };

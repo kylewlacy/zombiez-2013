@@ -1,7 +1,9 @@
 #include "RenderView.h"
 
 RenderView::RenderView() {
-  objects = (RenderObject**)new RenderModel*[1];
+  vboInit = 0;
+
+  objects = new RenderModel*[1];
   objects[0] = new RenderModel();
 }
 
@@ -9,7 +11,16 @@ void RenderView::render() {
   glClearColor(0, 0, 0, 0);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  objects[0]->render();
+
+  glColor3f(1.0, 1.0, 1.0);
+  for(int i = 0; i < (sizeof(objects)/sizeof(objects[0])); i++) {
+    if(!vboInit) {
+      objects[i]->vboInit();
+    }
+    objects[i]->render();
+  }
+
+  vboInit = true;
 
   glFlush();
 }
