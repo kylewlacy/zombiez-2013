@@ -7,7 +7,7 @@ class RenderModel : public RenderObject {
   public:
     unsigned int vertexBuffer, indexBuffer;
     RenderVertex **verticies;
-    long unsigned int *indicies;
+    unsigned short *indicies;
 
     RenderModel();
     void vboInit();

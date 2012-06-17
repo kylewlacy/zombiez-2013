@@ -13,7 +13,7 @@ void RenderView::render() {
 
 
   glColor3f(1.0, 1.0, 1.0);
-  for(int i = 0; i < (sizeof(objects)/sizeof(objects[0])); i++) {
+  for(int i = 0; i < 1; i++) {
     if(!vboInit) {
       objects[i]->vboInit();
     }
