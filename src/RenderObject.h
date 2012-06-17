@@ -27,14 +27,17 @@ class RenderObject {
 
     struct RenderVertex {
       float x, y, z;
-      float u, v;
-      Vertex normal;
       Color color;
+      Vertex normal;
+      float u, v;
 
-      RenderVertex(float _x = 0, float _y = 0, float _z = 0) {
+      RenderVertex(float _x = 0, float _y = 0, float _z = 0, Color _color = Color(), Vertex _normal = Vertex()) {
         x = _x;
         y = _y;
         z = _z;
+
+        color = _color;
+        normal = _normal;
       }
     };
 
