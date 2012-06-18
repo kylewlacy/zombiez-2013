@@ -28,7 +28,7 @@ for file in $files; do
 done
 $ccompiler $cflags $ldflags -o "$appdir"/Contents/MacOS/zombiez2013 $fileobjs
 touch "$appdir"/Contents/PkgInfo
-cp platforms/resources/* "$appdir"/Contents/Resources/
+cp resources/* "$appdir"/Contents/Resources/
 cp platforms/osx/resources/* "$appdir"/Contents/Resources/
 cp platforms/osx/Info.plist "$appdir"/Contents/Info.plist
 rm build/*.o
