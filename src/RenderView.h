@@ -2,7 +2,7 @@
 
 #include "platform.h"
 #include "RenderObject.h"
-#include "RenderModel.h"
+#include "RenderPrimitive.h"
 
 class RenderView {
   public:
@@ -10,5 +10,5 @@ class RenderView {
     void render();
     
     bool vboInit;
-    RenderModel** objects;
+    RenderPrimitive** objects;
 };

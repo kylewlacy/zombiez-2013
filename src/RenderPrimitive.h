@@ -3,13 +3,13 @@
 #include "platform.h"
 #include "RenderObject.h"
 
-class RenderModel : public RenderObject {
+class RenderPrimitive : public RenderObject {
   public:
     unsigned int vertexBuffer, indexBuffer;
     RenderVertex **verticies;
-    unsigned short *indicies;
+    signed short *indicies;
 
-    RenderModel();
+    RenderPrimitive();
     void vboInit();
     void render();
 };

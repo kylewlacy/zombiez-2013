@@ -1,6 +1,6 @@
-#include "RenderModel.h"
+#include "RenderPrimitive.h"
 
-RenderModel::RenderModel() {
+RenderPrimitive::RenderPrimitive() {
   verticies = new RenderVertex*[4];
 
   verticies[0] = new RenderVertex(0.0, 0.6, 0.0, Color(1, 0, 0));
@@ -8,14 +8,14 @@ RenderModel::RenderModel() {
   verticies[2] = new RenderVertex(0.2, -0.3, 0.0,  Color(0, 0, 1));
   verticies[3] = NULL;
 
-  indicies = new signed short[4];
+  indicies = new short[4];
   indicies[0] = 0;
   indicies[1] = 1;
   indicies[2] = 2;
   indicies[3] = -1;
 }
 
-void RenderModel::vboInit() {
+void RenderPrimitive::vboInit() {
   int vertexCount, indexCount;
 
   for(vertexCount = 0; verticies[vertexCount] != NULL; vertexCount++) { };
@@ -26,10 +26,10 @@ void RenderModel::vboInit() {
   glGenBuffers(1, &indexBuffer);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
   for(indexCount = 0; indicies[indexCount] >= 0; indexCount++) { };
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned short) * indexCount, indicies, GL_STATIC_DRAW);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(short) * indexCount, indicies, GL_STATIC_DRAW);
 }
 
-void RenderModel::render() {
+void RenderPrimitive::render() {
   glColor3f(1.0f, 0.85f, 0.35f);
   glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);

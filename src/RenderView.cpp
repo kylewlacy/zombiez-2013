@@ -3,8 +3,8 @@
 RenderView::RenderView() {
   vboInit = 0;
 
-  objects = new RenderModel*[1];
-  objects[0] = new RenderModel();
+  objects = new RenderPrimitive*[1];
+  objects[0] = new RenderPrimitive();
 }
 
 void RenderView::render() {
