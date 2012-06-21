@@ -12,4 +12,7 @@ class RenderPrimitive : public RenderObject {
     RenderPrimitive();
     void vboInit();
     void render();
+
+  protected:
+    GLenum _renderMode;
 };

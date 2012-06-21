@@ -1,6 +1,8 @@
 #include "RenderPrimitive.h"
 
 RenderPrimitive::RenderPrimitive() {
+  _renderMode = GL_TRIANGLES;
+
   verticies = new RenderVertex*[4];
 
   verticies[0] = new RenderVertex(0.0, 0.6, 0.0, Color(1, 0, 0));
@@ -38,5 +40,5 @@ void RenderPrimitive::render() {
   glEnableClientState(GL_COLOR_ARRAY);
   glVertexPointer(3, GL_FLOAT, sizeof(RenderVertex), BUFFER_OFFSET(0));
   glColorPointer(4, GL_FLOAT, sizeof(RenderVertex), BUFFER_OFFSET(sizeof(Vertex)));
-  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, BUFFER_OFFSET(0));
+  glDrawElements(_renderMode, 3, GL_UNSIGNED_SHORT, BUFFER_OFFSET(0));
 }
