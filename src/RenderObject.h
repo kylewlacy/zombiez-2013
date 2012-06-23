@@ -41,5 +41,6 @@ class RenderObject {
       }
     };
 
+    virtual void prepare() { };
     virtual void render() { };
 };

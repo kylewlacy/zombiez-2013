@@ -10,7 +10,7 @@ class RenderPrimitive : public RenderObject {
     signed short *indicies;
 
     RenderPrimitive();
-    void vboInit();
+    void prepare();
     void render();
 
   protected:

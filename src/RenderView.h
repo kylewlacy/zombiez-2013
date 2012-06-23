@@ -6,9 +6,12 @@
 
 class RenderView {
   public:
+    float rotation;
     RenderView();
+    
+    void prepare();
+    void update();
     void render();
     
-    bool vboInit;
     RenderPrimitive** objects;
 };

@@ -17,7 +17,7 @@ RenderPrimitive::RenderPrimitive() {
   indicies[3] = -1;
 }
 
-void RenderPrimitive::vboInit() {
+void RenderPrimitive::prepare() {
   int vertexCount, indexCount;
 
   for(vertexCount = 0; verticies[vertexCount] != NULL; vertexCount++) { };
